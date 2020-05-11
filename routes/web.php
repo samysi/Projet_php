@@ -34,3 +34,7 @@ Route::get('/deconnexion', 'CompteController@deconnexion');
 Route::get('/candidature', 'CandidatureController@candidature');	
 
 Route::post('/deposercandidature', 'CandidatureController@deposercandidature');
+
+Route::get('/validation','CandidatureController@valider');
+
+Route::get('/telecharger', 'CandidatureController@telecharge');

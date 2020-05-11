@@ -18,7 +18,7 @@ class Etudiant extends Model implements Authenticatable{
     }
 
     public function dossier(){
-    	return $this->hasOne('App\Dossier', 'id', 'id_dossier');
+    	return $this->hasOne('App\Dossier', 'id_etudiant', 'id');
     }
 }
 

@@ -8,7 +8,8 @@ use Illuminate\Auth\Authenticatable as BasicAuthenticatable;
 
 class Dossier extends Model{
 
-	protected $fillable = ['cv', 'lettre', 'relever_note', 'imprime_ecran', 'id_etudiant', 'id_statut', 'id_formation'];
+	protected $fillable = ['cv', 'lettre', 'relever_note', 'imprime_ecran', 'id_etudiant', 'id_statut', 'id_formation','commentaire'];
+	public $timestamps = false;
 	public function statut(){
 		return $this->belongsTo('App\Statut', 'id_statut', 'id_statut');
 	}
