@@ -12,13 +12,13 @@ class Etudiant extends Model implements Authenticatable{
 	protected $fillable = ['email', 'nom', 'prenom', 'password', 'date_naissance', 'adresse', 'telephone'];
 
 
-    public function getRememberTokenName()
-    {
-        return '';
-    }
+	public function getRememberTokenName()
+	{
+		return '';
+	}
 
-    public function dossier(){
-    	return $this->hasOne('App\Dossier', 'id_etudiant', 'id');
-    }
+	public function dossier(){
+		return $this->hasOne('App\Dossier', 'id_etudiant', 'id');
+	}
 }
 

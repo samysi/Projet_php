@@ -7,21 +7,16 @@
 
 <center><div class="corpsFormulaire" style="width: 500px; height: 500px;font-weight: bold; font-size: 20px ">
 
-
-	
-
-
-
     <form action="/deposercandidature" method="post" enctype="multipart/form-data">
-       {{ csrf_field() }}
+     {{ csrf_field() }}
 
-<select name="formation">
-@foreach($formation as $formation)
+     <select name="formation">
+        @foreach($formation as $formation)
         <option value="{{$formation->id_formation}}">{{$formation->libelle_formation}}</option>
-@endforeach
+        @endforeach
     </select>
 
-       <div class="form-group">
+    <div class="form-group">
         <label for="cv">CV</label>
         <input type="file" class="form-control-file" name="cv">
     </div>

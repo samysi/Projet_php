@@ -10,50 +10,53 @@ use Response;
 
 class CandidatureController extends Controller
 {
-      public function candidature(){
-        if (auth()->user()->dossier!=null) {
-            return redirect('/validation');
-        }
-        $formation=Formation::all();
-
-    		return view('candidature', [
-            'formation' => $formation,
-        ]);
+  public function candidature(){
+    if (auth()->user()->dossier!=null) {
+        return redirect('/validation');
     }
+    $formation=Formation::all();
 
-    public function deposercandidature(Request $request){
+    return view('candidature', [
+        'formation' => $formation,
+    ]);
+}
+
+public function deposercandidature(Request $request){
 
     $request->cv->storeAs('/app',  'cv_'.auth()->user()->id .'.pdf');
+    $request->lettre->storeAs('/app',  'lettre_motivation_'.auth()->user()->id .'.pdf');
+    $request->relever_note->storeAs('/app',  'relever_note_'.auth()->user()->id .'.pdf');
+    $request->imprime_ecran->storeAs('/app',  'imprime_ecran_'.auth()->user()->id .'.pdf');
 
-       $dossier=Dossier::create(['id_etudiant'=>auth()->user()->id,
-            'cv'=>'cv_'.auth()->user()->id .'.pdf',
-            'lettre'=>$request->file('lettre'),
-            'relever_note'=>$request->file('relever_note'),
-            'imprime_ecran'=>$request->file('imprime_ecran'),
-            'id_statut'=>1, 
-            'id_formation'=>$request->formation,
-            'commentaire'=>$request->commentaire,
-        ]);
-       return redirect('/validation');
+    $dossier=Dossier::create(['id_etudiant'=>auth()->user()->id,
+        'cv'=>'cv_'.auth()->user()->id .'.pdf',
+        'lettre'=>'lettre_motivation_'.auth()->user()->id .'.pdf',
+        'relever_note'=>'relever_note_'.auth()->user()->id .'.pdf',
+        'imprime_ecran'=>'imprime_ecran_'.auth()->user()->id .'.pdf',
+        'id_statut'=>1, 
+        'id_formation'=>$request->formation,
+        'commentaire'=>$request->commentaire,
+    ]);
+    return redirect('/validation');
 
-    	}
+}
 
-        public function valider(){
+public function valider(){
 
-            $dossier=auth()->user()->dossier;
-            return view('validation', [
-            'dossier' => $dossier,
-        ]);
-        }
+    $dossier=auth()->user()->dossier;
+    return view('validation', [
+        'dossier' => $dossier,
+    ]);
+}
 
-        public function telecharge(Request $request)
+public function telecharge(Request $request)
 {
 
     $file =storage_path().'/app/app/'. $request->path;
     $headers = array(
-              'Content-Type: application/pdf',
-            );
+      'Content-Type: application/pdf',
+  );
 
     return Response::download($file, $request->path, $headers);
 }
-  }
+}
