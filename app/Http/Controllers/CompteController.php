@@ -31,7 +31,7 @@ class CompteController extends Controller
         'password' => bcrypt(request('password')),
     ]);
 
-    return 'Votre mot de passe a bien été mis à jour';
+    return redirect('/mon-compte');
 
     }
 
