@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('contenu')
-<a href="/mon-compte" class="btn btn-info">Mon compte</a>
+<a href="/compteProf" class="btn btn-info">Mon compte Prof</a>
 
 <center><h1 style="font-weight: bold; font-size: 70px;"">Suivi des dossier</h1></center>
 
