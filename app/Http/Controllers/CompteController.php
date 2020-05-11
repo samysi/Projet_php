@@ -23,10 +23,6 @@ class CompteController extends Controller
     		'password'=>['required', 'min:5'],
     	]);
 
-    	/*$etudiant=auth()->user();
-    	$etudiant->password = bcrypt(request('password'));
-    	$etudiant->save();*/
-
     auth()->user()->update([
         'password' => bcrypt(request('password')),
     ]);
@@ -39,7 +35,4 @@ class CompteController extends Controller
         auth()->logout();
         return redirect('/');
     }
-
-   /* public function candidature(){
-        return view('candidature');*/
 }

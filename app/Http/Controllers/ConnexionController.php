@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class ConnexionController extends Controller
 {
@@ -22,6 +23,9 @@ class ConnexionController extends Controller
     	]);
 
     	if ($resultat){
+            if (Auth()->user()->prof) {
+                return redirect('/compteProf');
+            }
             return redirect('/mon-compte');
         }
         return back()->withInput()->withErrors([

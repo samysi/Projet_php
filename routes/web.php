@@ -38,3 +38,13 @@ Route::post('/deposercandidature', 'CandidatureController@deposercandidature');
 Route::get('/validation','CandidatureController@valider');
 
 Route::get('/telecharger', 'CandidatureController@telecharge');
+
+Route::get('/creationProf', 'AdminController@formulaire');
+
+Route::post('/creationProf', 'AdminController@traitement');
+
+Route::get('/compteProf', 'AdminController@suivre');
+
+Route::get('/afficherDossier/{id}','AdminController@suivreDossier')->name('afficherUnDossier');
+
+Route::post('/changerStatut/{id}', 'AdminController@changer')->name('changerStatut');
