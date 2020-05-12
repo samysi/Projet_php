@@ -26,6 +26,9 @@ class CompteController extends Controller
     auth()->user()->update([
         'password' => bcrypt(request('password')),
     ]);
+     if (Auth()->user()->prof) {
+                return redirect('/compteProf');
+            }
 
     return redirect('/mon-compte');
 
