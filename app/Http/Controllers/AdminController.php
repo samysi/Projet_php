@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Etudiant;
+use App\Prof;
 use App\Dossier;
 use App\Statut;
 
@@ -19,8 +20,13 @@ class AdminController extends Controller
 			'password' => ['required', 'min:5'],
 
 		]);
+		if (Prof::where('email', request('email'))->first()!=null) {
+			return back()->withInput()->withErrors([
+				'email'=> 'Email déjà existant',
+			]);
+		}
 
-		$etudiants = Etudiant::create([
+		$profs = Prof::create([
 			
 			'nom' => request('nom'),
 			'prenom' => request('prenom'),
@@ -38,19 +44,19 @@ class AdminController extends Controller
 
 	public function suivre(){
 
-    $dossier=Dossier::all();
-    return view('suivi', [
-        'dossier' => $dossier,
-    ]);
+		$dossier=Dossier::all();
+		return view('suivi', [
+			'dossier' => $dossier,
+		]);
 	}
 
 	public function suivreDossier($id_dossier){
-		 $dossier=Dossier::find($id_dossier);
-		 $statut=Statut::all();
-    return view('suiviUnDossier', [
-        'dossier' => $dossier,
-        'statut' => $statut,
-    ]);
+		$dossier=Dossier::find($id_dossier);
+		$statut=Statut::all();
+		return view('suiviUnDossier', [
+			'dossier' => $dossier,
+			'statut' => $statut,
+		]);
 	}
 
 	public function changer($id_dossier){

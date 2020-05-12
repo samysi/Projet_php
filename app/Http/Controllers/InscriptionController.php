@@ -17,7 +17,11 @@ class InscriptionController extends Controller
 			'date_naissance' => ['required', 'date'],
 
 		]);
-
+		if (Etudiant::where('email', request('email'))->first()!=null) {
+			return back()->withInput()->withErrors([
+				'email'=> 'Email déjà existant',
+			]);
+		}
 		$etudiants = Etudiant::create([
 			
 			'nom' => request('nom'),

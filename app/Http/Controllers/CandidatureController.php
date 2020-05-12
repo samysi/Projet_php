@@ -10,18 +10,20 @@ use Response;
 
 class CandidatureController extends Controller
 {
-  public function candidature(){
-    if (auth()->user()->dossier!=null && auth()->user()->dossier->statut!=null && auth()->user()->dossier->statut->libelle_statut=='Reçu incomplet en attente de complément') { // Verfifie si le dossier n'est pas null et que le statut existe et qu'il est en "reçu incomplet"
-        return view('candidatureIncomplet');
-    }
-    if (auth()->user()->dossier!=null) {
-        return redirect('/validation');
-    }
-    $formation=Formation::all();
+    public function candidature(){
+    if (auth()->user()->dossier!=null && auth()->user()->dossier->statut!=null && auth()->user()->dossier->statut->libelle_statut=='Reçu incomplet en attente de complément'){ // Verfifie si le dossier n'est pas null et que le statut existe et qu'il est en "reçu incomplet"
+    return view('candidatureIncomplet');
+}
 
-    return view('candidature', [
-        'formation' => $formation,
-    ]);
+if (auth()->user()->dossier!=null) {
+    return redirect('/validation');
+}
+
+$formation=Formation::all();
+
+return view('candidature', [
+    'formation' => $formation,
+]);
 }
 
 public function deposercandidature(Request $request){

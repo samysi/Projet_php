@@ -31,44 +31,46 @@
 </head>
 <body>
 
- <nav class="navbar navbar-expand-lg navbar-light bg-light" style=" font-size: large;font-weight: bold;">
+   <nav class="navbar navbar-expand-lg navbar-light bg-light" style=" font-size: large;font-weight: bold;">
     <a class="navbar-brand" href="/">Miage PHP</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarNav" style="padding-left: 28%;">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="/inscription">Inscription etudiant<span class="sr-only">(current)</span></a>
-    </li>
-    @if(auth()->check()==true && auth()->user()->email=='admin@parisnanterre.fr')
-     <li class="nav-item active">
-        <a class="nav-link" href="/creationProf">Inscription enseignant<span class="sr-only">(current)</span></a>
-    </li>
-    @endif
-    @if(auth()->check()==false)
-    <li class="nav-item active">
-        <a class="nav-link" href="/connexion">Connexion<span class="sr-only">(current)</span></a>
-    </li> 
-    @else
-       <li class="nav-item active">
-        <a class="nav-link" href="/deconnexion">Deconnexion<span class="sr-only">(current)</span></a>
-    </li> 
-    @endif
-</ul>
-</div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav" style="padding-left: 35%;">
+        <ul class="navbar-nav">
+            @if(auth()->check()==false)
+            <li class="nav-item active">
+                <a class="nav-link" href="/inscription">Inscription etudiant<span class="sr-only">(current)</span></a>
+            </li>
+            @endif
+            @if(auth()->check()==true && auth()->user()->email=='admin@parisnanterre.fr')
+            <li class="nav-item active">
+                <a class="nav-link" href="/creationProf">Inscription enseignant<span class="sr-only">(current)</span></a>
+            </li>
+            @endif
+            @if(auth()->check()==false)
+            <li class="nav-item active">
+                <a class="nav-link" href="/connexion">Connexion<span class="sr-only">(current)</span></a>
+            </li> 
+            @else
+            <li class="nav-item active">
+                <a class="nav-link" href="/deconnexion">Deconnexion<span class="sr-only">(current)</span></a>
+            </li> 
+            @endif
+        </ul>
+    </div>
 </nav>
 <br>
 <div class="container">
     @yield('contenu')
 </div>
-<footer style="padding-top: 180px;" class="page-footer font-small blue">
+<footer style="padding-top: 200px;" class="page-footer font-small blue">
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="#" style="font-size: 30px;"> Samy SI-MOHAMMED</a>
+    <a href="#" style="font-size: 20px;"> Samy SI-MOHAMMED</a>
 </div>
-<!-- Copyright -->
+<!--Copyright -->
 
 </footer>
 </body>

@@ -13,10 +13,10 @@ class ConnexionController extends Controller
 
     public function traitement(){
     	request()->validate([
-           'email' => ['required', 'email'],
-           'password' => ['required', 'min:5'],
+         'email' => ['required', 'email'],
+         'password' => ['required', 'min:5'],
 
-       ]);
+     ]);
     	$resultat = auth()->attempt([
     		'email' => request('email'),
     		'password' => request('password'),

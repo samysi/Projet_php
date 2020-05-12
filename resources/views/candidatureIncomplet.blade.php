@@ -8,9 +8,9 @@
 <center><div class="corpsFormulaire" style="width: 500px; height: 500px;font-weight: bold; font-size: 20px ">
 
     <form action="/completerCandidature" method="post" enctype="multipart/form-data">
-     {{ csrf_field() }}
+       {{ csrf_field() }}
 
-    <div class="form-group">
+       <div class="form-group">
         <label for="cv">CV</label>
         <input type="file" class="form-control-file" name="cv">
     </div>
