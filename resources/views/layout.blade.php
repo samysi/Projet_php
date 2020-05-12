@@ -44,9 +44,15 @@
      <li class="nav-item active">
         <a class="nav-link" href="/creationProf">Inscription enseignant<span class="sr-only">(current)</span></a>
     </li>
+    @if(auth()->check()==false)
     <li class="nav-item active">
         <a class="nav-link" href="/connexion">Connexion<span class="sr-only">(current)</span></a>
-    </li>   
+    </li> 
+    @else
+       <li class="nav-item active">
+        <a class="nav-link" href="/deconnexion">Deconnexion<span class="sr-only">(current)</span></a>
+    </li> 
+    @endif
 </ul>
 </div>
 </nav>

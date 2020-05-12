@@ -15,7 +15,7 @@ class Dossier extends Model{
 		return $this->belongsTo('App\Statut', 'id_statut', 'id_statut');
 	}
 	public function etudiant(){
-		return $this->belongsTo('App\Etudiant', 'id', 'id_etudiant');
+		return $this->belongsTo('App\Etudiant', 'id_etudiant', 'id');
 	}
 	public function formation(){
 		return $this->belongsTo('App\Formation', 'id_formation', 'id_formation');

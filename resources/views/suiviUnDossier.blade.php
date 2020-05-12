@@ -10,13 +10,16 @@
 <p style="color: green;">Statut du dossier : {{$dossier->statut->libelle_statut}}</p>
 
     <center><h2 style="font-size: 30px;">Element téléchargeable</h2></center>
+
 <form method="get">
-        <a class="btn btn-lg" href="telecharger?path={{$dossier->cv}}">CV</a>
-        <a class="btn btn-lg" href="telecharger?path={{$dossier->lettre}}">Lettre de motivation</a>
-        <a class="btn btn-lg" href="telecharger?path={{$dossier->relever_note}}">Relever de note</a>
-        <a class="btn btn-lg" href="telecharger?path={{$dossier->imprime_ecran}}">Imprime_ecran</a>
+	    <a class="btn btn-lg" href="/telecharger?path={{$dossier->cv}}">CV</a>
+        <a class="btn btn-lg" href="/telecharger?path={{$dossier->lettre}}">Lettre de motivation</a>
+        <a class="btn btn-lg" href="/telecharger?path={{$dossier->relever_note}}">Relever de note</a>
+        <a class="btn btn-lg" href="/telecharger?path={{$dossier->imprime_ecran}}">Imprime_ecran</a>
+</form>
+
  
-      </form>
+ 
 <form method="post" action="{{route('changerStatut', $dossier->id_dossier)}}">
 	@csrf
       <select name="statut" class="mdb-select md-form">

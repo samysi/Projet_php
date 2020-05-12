@@ -48,3 +48,6 @@ Route::get('/compteProf', 'AdminController@suivre');
 Route::get('/afficherDossier/{id}','AdminController@suivreDossier')->name('afficherUnDossier');
 
 Route::post('/changerStatut/{id}', 'AdminController@changer')->name('changerStatut');
+
+Route::post('/completerCandidature','CandidatureController@redeposercandidature');
+

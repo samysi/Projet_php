@@ -3,7 +3,6 @@
 @section('contenu')
 
 <a href="/candidature" style="float: right; margin-right: 20px; margin-bottom: 20px;" class="btn btn-primary">Candidature</a>
-<a href="/deconnexion" style="float: left; margin-left: 20px; margin-bottom: 20px;" class="btn btn-danger">Déconnexion</a>
 
 	<center><h1 style="font-weight: bold; font-size: 70px;"">Mon compte</h1></center>
 <center><div class="corpsFormulaire" style="width: 500px; height: 500px;font-weight: bold; font-size: 20px ">

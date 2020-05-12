@@ -11,8 +11,11 @@
     <table class="table table-hover">
 			<thead class="thead-dark">
 				<tr>
+					<th scope="col">Nom</th>
+					<th scope="col">Prenom</th>
 					<th scope="col">Statut</th>
 					<th scope="col">Formation</th>
+					<th scope="col">Commentaire</th>
 					<th scope="col"></th>
 					<th scope="col"></th>
 				</tr>
@@ -21,10 +24,19 @@
 			
 			<tr>
 				<th>
+					{{ $dossier -> etudiant -> nom}}
+				</th>
+				<th>
+					{{ $dossier -> etudiant -> prenom}}
+				</th>
+				<th>
 					{{ $dossier -> statut -> libelle_statut}}
 				</th>
 				<th>
 					{{ $dossier -> formation -> libelle_formation}}
+				</th>
+				<th>
+					{{ $dossier -> commentaire}}
 				</th>
 				<th>
 					<button class="btn" type="button"><a href="{{ route('afficherUnDossier', $dossier->id_dossier ) }}">Afficher</a></button>
