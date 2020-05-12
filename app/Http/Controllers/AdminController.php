@@ -33,7 +33,7 @@ class AdminController extends Controller
 
 		]);
 
-		return redirect('/connexion');
+		return redirect('/compteProf');
 	}
 
 	public function suivre(){
