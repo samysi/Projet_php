@@ -64,14 +64,5 @@
 <div class="container">
     @yield('contenu')
 </div>
-<footer style="padding-top: 200px;" class="page-footer font-small blue">
-
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="#" style="font-size: 20px;"> Samy SI-MOHAMMED</a>
-</div>
-<!--Copyright -->
-
-</footer>
 </body>
 </html>
