@@ -12,6 +12,7 @@ class Dossier extends Model{
 	protected $fillable = ['cv', 'lettre', 'relever_note', 'imprime_ecran', 'id_etudiant', 'id_statut', 'id_formation','commentaire'];
 	public $timestamps = false;
 	
+	// Ces fonctions permettent le lien entre les differentes tables
 	public function statut(){
 		return $this->belongsTo('App\Statut', 'id_statut', 'id_statut');
 	}

@@ -1,9 +1,10 @@
+-- Samy SI-MOHAMMED L3 APP
 -- phpMyAdmin SQL Dump
 -- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 13 mai 2020 à 23:23
+-- Généré le : lun. 18 mai 2020 à 13:06
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.4.3
 
@@ -111,7 +112,7 @@ CREATE TABLE `individus` (
 INSERT INTO `individus` (`id`, `nom`, `prenom`, `email`, `password`, `date_naissance`, `adresse`, `telephone`, `created_at`, `updated_at`, `remember_token`, `admin`, `prof`) VALUES
 (5, 'test', 'test', 'test@test.fr', '$2y$10$PNOp6O2lC8yIZwpXjG4Ps.NNsUbp90F/7yYUgBd1PXdP51P7Yd5Xq', '1998-02-02', 'nanterre', 12345, '2020-04-27 07:54:15', '2020-04-27 08:32:43', NULL, 0, 0),
 (7, 'mr', 'moi', 'moi@nanterre.fr', '$2y$10$XoQ0RAEY7jfSlP3x.th1WOcbJbA5pvkQllHfy5qqG.YNyJ97pFub6', '2013-10-15', 'nanterre', 645982563, '2020-05-11 09:37:15', '2020-05-12 19:12:21', NULL, 0, 0),
-(8, 'mr', 'truc', 'admin@parisnanterre.fr', '$2y$10$adyUMZwexoWIKp.yUnUilu9nL5evSopPD8gXMKgR/7R7LM7MAm/Kq', '1999-01-01', 'rien', 0, '2020-05-11 19:15:21', '2020-05-12 20:34:40', NULL, 0, 1),
+(8, 'mr', 'truc', 'admin@parisnanterre.fr', '$2y$10$sHWTePNTZIvxpsXWH.Pdh.wKvqhicGcPJoY7uMRTkz8sWofERu4UK', '1999-01-01', 'rien', 0, '2020-05-11 19:15:21', '2020-05-18 09:05:16', NULL, 0, 1),
 (9, 'SI-mohammed', 'Yasser', 'yasser@nanterre.fr', '$2y$10$QGDqIEEJbCTyVb.qxgvY0u4c1E2zemlJya.laV1Ui2hsqUBMAF5rC', '2005-08-24', 'Rosny', 658943578, '2020-05-12 19:08:23', '2020-05-12 19:08:23', NULL, 0, 0),
 (10, 'Isoard', 'Thierry', 'isoard@parisnanterre.fr', '$2y$10$zMwEJCEZC6ibEJbp0bowv.DbOoUY5Q/JGJUVimThQYBG3UOOW.naC', '1999-01-01', 'rien', 0, '2020-05-12 19:50:35', '2020-05-12 19:50:35', NULL, 0, 1),
 (12, 'Sakho', 'mamadou', 'mamadou@nanterre.fr', '$2y$10$SNljrsvudx3qGvEly1sMTO7SbRNtudYui2Mvt4hua8tf90.mjsnhy', '1985-01-01', 'paris', 645787889, '2020-05-12 20:23:14', '2020-05-12 20:24:47', NULL, 0, 0),

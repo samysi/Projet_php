@@ -12,7 +12,7 @@ class AdminController extends Controller
 	public function formulaire(){
 		return view('creationProf');
 	}
-
+// Fonction de creation de prof 
 	public function traitement(){
 
 		request()->validate([
@@ -20,6 +20,7 @@ class AdminController extends Controller
 			'password' => ['required', 'min:5'],
 
 		]);
+		// Verification que l'individu n'est pas déjà present dans la base en fonction de l'adresse mail
 		if (Prof::where('email', request('email'))->first()!=null) {
 			return back()->withInput()->withErrors([
 				'email'=> 'Email déjà existant',
@@ -42,6 +43,7 @@ class AdminController extends Controller
 		return redirect('/compteProf');
 	}
 
+// permet l'affichage de tous les candidats 
 	public function suivre(){
 
 		$dossier=Dossier::all();
@@ -49,7 +51,7 @@ class AdminController extends Controller
 			'dossier' => $dossier,
 		]);
 	}
-
+ 
 	public function suivreDossier($id_dossier){
 		$dossier=Dossier::find($id_dossier);
 		$statut=Statut::all();
@@ -58,7 +60,7 @@ class AdminController extends Controller
 			'statut' => $statut,
 		]);
 	}
-
+	//fonction qui affiche un seul dossier + une qui change le statut
 	public function changer($id_dossier){
 		$dossier=Dossier::find($id_dossier);
 		$dossier->id_statut=request('statut');
@@ -66,5 +68,4 @@ class AdminController extends Controller
 
 		return redirect()->back();
 	}
-	//fonction qui affiche un seul dossier + une qui change le statut
 }

@@ -10,6 +10,7 @@ class InscriptionController extends Controller
 		return view('inscription');
 	}
 
+	//Fonction de création d'étudiant
 	public function traitement(){
 		request()->validate([
 			'email' => ['required', 'email'],
